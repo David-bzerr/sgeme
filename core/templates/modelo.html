@@ -17,25 +17,51 @@
     {% block menu %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">Logo</a>  <!-- Link para a página inicial -->
+            <a class="navbar-brand" href="{% url 'home' %}">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Início</a>  <!-- Link para a página inicial -->
+                        <a class="nav-link" href="{% url 'home' %}">Início</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>  <!-- Link para a página de login -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Cadastrar</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'lista_produtos' %}">Lista de Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'relatorio_entrada_saida' %}">Relatório de Entrada e Saída</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Cadastrar</a>
+                        </li>
+                    {% endif %}
                 </ul>
+    
+                {% if user.is_authenticated %}
+                    <!-- Ícone do sino à direita -->
+                    <div class="d-flex align-items-center notification-icon">
+                        <a class="nav-link" href="{% url 'produtos_proximos_validade' %}" title="Produtos próximos da validade">
+                            {% if produtos_proximos_validade %}
+                                <i class="mingcute--notification-newdot-fill"></i>
+                            {% else %}
+                                <i class="mingcute--notification-line"></i>
+                            {% endif %}
+                        </a>
+                    </div>
+                {% endif %}
             </div>
         </div>
-    </nav>
+    </nav>     
     {% endblock %}
 
     {% block conteudo %}

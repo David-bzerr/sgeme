@@ -3,7 +3,7 @@
 import os
 import sys
 
-#hhhjhhj
+
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sgeme.settings')

@@ -1,26 +1,36 @@
 {% extends 'modelo.html' %}
-{% load static %}
-
 {% block titulo %}
-<title>Login - Sistema de Merenda Escolar</title>
+<title>Login</title>
 {% endblock %}
-
 {% block conteudo %}
-<div class="login-container">
-    <div class="login-box">
-        <h2 class="login-title">Acessar Sistema</h2>
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username">Usuário</label>
-                <input type="text" id="username" name="username" class="form-control" placeholder="Digite seu usuário" required>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom">Login</button>
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger mt-3">
+                                {{ form.non_field_errors }}
+                            </div>
+                        {% endif %}
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Ainda não tem uma conta? <a href="{% url 'register' %}">Cadastrar-se</a></small>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha" required>
-            </div>
-            <button type="submit" class="btn btn-custom-login">Entrar</button>
-        </form>
+        </div>
     </div>
 </div>
 {% endblock %}

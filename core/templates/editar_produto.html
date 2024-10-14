@@ -1,0 +1,46 @@
+{% extends 'modelo.html' %}
+
+{% block titulo %}
+<title>Editar Produto</title>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-4">
+    <h2>Editar Produto</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="id_nome">Nome</label>
+            <input type="text" name="nome" id="id_nome" class="form-control" value="{{ produto.nome }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_categoria">Categoria</label>
+            <select type="text" name="categoria" id="id_categoria" class="form-control" required>
+                <option value="" disabled selected>Selecione uma categoria</option>
+                <option value="Frutas">Frutas</option>
+                <option value="Verduras e Legumes">Verduras e Legumes</option>
+                <option value="Carnes">Carnes</option>
+                <option value="Laticínios">Laticínios</option>
+                <option value="Grãos e Cereais">Grãos e Cereais</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Outros">Outros</option>
+            </select>        
+        </div>
+
+        <div class="form-group">
+            <label for="id_quantidade">Quantidade</label>
+            <input type="number" name="quantidade" id="id_quantidade" class="form-control" value="{{ produto.quantidade }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_data_validade">Data de Validade</label>
+            <input type="date" name="data_validade" id="id_data_validade" class="form-control" value="{{ produto.data_validade }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+{% endblock %}

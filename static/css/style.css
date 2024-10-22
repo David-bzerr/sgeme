@@ -151,7 +151,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .navbar .notification-icon {
     margin-left: auto; /* Move o ícone para a extrema direita */
-    padding-left: 15px; /* Adiciona espaço à esquerda do ícone */
+    padding-left: 300px; /* Adiciona espaço à esquerda do ícone */
 }
 
 .d-flex .nav-link {
@@ -162,4 +162,286 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .mingcute--notification-newdot-fill {
     width: 24px;
     height: 24px;
+}
+
+/*navbar*/
+#neubar {
+    background: #fae8d2; /* Azul claro */
+    box-shadow: 4px 6px 12px rgba(0,0,0,0.4);
+    width: 100%; /* Ocupa toda a largura da página */
+    margin: 0 auto;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o conteúdo da navbar */
+    
+  }
+  
+  .nav-item .active {
+    border-radius: 6px;
+    background: linear-gradient(145deg, #ffe7ca, #f5d7b2);
+    box-shadow:  4px 4px 8px #ddc1a0,
+                 -4px -4px 8px #f7e5cc;
+  }
+  
+  #neubar .dropdown-menu a:hover {
+    color: #454545;
+  }
+  
+  #neubar .nav-item {
+    margin: auto 4px;
+  }
+  
+  #neubar a {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  #neubar .dropdown-menu {
+    background: #545454;
+  }
+  
+  a.navbar-brand {
+    color: #454545;
+  }
+  
+  #neubar .navbar-brand img {
+    max-height: 60px;
+  }
+  
+  #neubar .navbar-nav .nav-link {
+    color: #454545;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  #neubar .navbar-nav .nav-link:hover {
+    color: #fa8d00;
+  }
+  
+  .notification-icon .nav-link i {
+    color: #fa8d00;
+  }
+  
+  .navbar-toggler {
+    border-color: #fa8d00;
+  }
+  
+
+
+
+  	/* serve de nada 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin:20px;
+  }
+   
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+   
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: inset  4px 4px 8px #d2d2d2,
+                inset -4px -4px 8px #a9a9a9;
+  }
+   
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+   
+  input:checked + .slider {
+    background-color: #2196F3;
+    box-shadow: inset  4px 4px 8px #366f9d,
+                inset 3px 5px 8px #d3ecff;
+  }
+   
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+   
+
+  .slider.round {
+    border-radius: 34px;
+  }
+   
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  #neoBgn {
+    background : #f7f7f7;
+    text-align:center
+  }
+
+  */
+
+
+
+
+
+  @mixin glassmorphism() {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0; /* Remove margens padrão */
+}
+
+.bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(circle at 30% 86%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%),
+                      radial-gradient(circle at 55% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%),
+                      radial-gradient(circle at 40% 75%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%),
+                      radial-gradient(circle at 7% 99%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%),
+                      radial-gradient(circle at 69% 76%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%),
+                      radial-gradient(circle at 2% 35%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%),
+                      radial-gradient(circle at 14% 48%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%),
+                      radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%),
+                      radial-gradient(circle at 65% 14%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%),
+                      radial-gradient(circle at 51% 36%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%),
+                      radial-gradient(circle at 6% 93%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%),
+                      linear-gradient(135deg, rgb(23, 233, 173), rgb(29, 24, 208));
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 40px; /* Padding nas bordas */
+    background-color: #f5f5f5;
+    flex-direction: column; /* Coloca os elementos na coluna */
+}
+
+.bg-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Cor do fundo do contêiner */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra ao redor do contêiner */
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+    @include glassmorphism();
+    border-radius: 3px;
+
+    h1 {
+        @include glassmorphism();
+        margin-top: 0px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+    }
+
+    form {
+        padding: 15px;
+
+        .btn {
+            @include glassmorphism();
+            color: #fff;
+
+            &:hover,
+            &:focus {
+                background: rgba(255, 255, 255, 0.1);
+                box-shadow: none;
+            }
+        }
+
+        .form-control:focus {
+            border-color: #ced4da;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .form-control {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-check {
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.65);
+
+        label {
+            font-size: 0.9em;
+        }
+
+        input {
+            margin-right: 0.5em;
+
+            &:checked {
+                background-color: #9ce060;
+                border-color: #81c63f;
+            }
+        }
+    }
+
+    .form-floating {
+        &:focus-within {
+            z-index: 2;
+        }
+    }
+
+    input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    input[type="password"] {
+        margin
+
+
+            
+.form-container {
+    width: 200px; /* ajuste esse valor para a largura desejada */
+    margin: 10 auto; /* centraliza o contêiner */
+    padding: 20px; /* ajuste a margem interna se necessário */
+    background-color: rgba(206, 54, 54, 0.8); /* cor de fundo para o contêiner */
+    border-radius: 50   px; /* bordas arredondadas, opcional */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra opcional */
 }

@@ -2,35 +2,54 @@
 {% block titulo %}
 <title>Login</title>
 {% endblock %}
+
 {% block conteudo %}
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-body">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+<div class="bg"></div>
+
+<main class="form-signin">
+    <div class="container mt-5 form-container" style="width: 100%; display: flex ;"> <!-- Contêiner para centralizar e dar espaço -->
+        <div class="row justify-content-center">
+            <div class="col-md-11 col-lg-10"> <!-- Aumentei a largura do contêiner -->
+                <div class="p-4" style="background-color: #4c4c4d; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> <!-- Estilo do contêiner -->
+                    <h1 class="h3 text-center">Login</h1>
                     <form method="post" action="{% url 'login' %}">
                         {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Usuário</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
+                        
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Usuário" required>
+                            <label for="username">Usuário</label>
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
+                            <label for="password">Senha</label>
                         </div>
-                        <button type="submit" class="btn btn-custom">Login</button>
+
+                        <div class="checkbox mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" value="1" name="remember_me" id="rememberMeSwitch">
+                                <label class="form-check-label" for="rememberMeSwitch">Lembrar-me</label>
+                            </div>
+                        </div>
+
+                        <button class="w-100 btn btn-lg btn-custom" type="submit">Login</button>
+
                         {% if form.non_field_errors %}
                             <div class="alert alert-danger mt-3">
                                 {{ form.non_field_errors }}
                             </div>
                         {% endif %}
                     </form>
-                </div>
-                <div class="card-footer text-center">
-                    <small>Ainda não tem uma conta? <a href="{% url 'register' %}">Cadastrar-se</a></small>
-                </div>
+
+                    <div class="text-center mt-3">
+                        <small>Ainda não tem uma conta? <a href="{% url 'register' %}">Cadastrar-se</a></small>
+                    </div>
+                </div> <!-- Fim do contêiner -->
             </div>
         </div>
     </div>
-</div>
+</main>
 {% endblock %}

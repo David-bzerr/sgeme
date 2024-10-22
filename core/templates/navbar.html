@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-sm navbar-light" id="neubar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="/static_files/images/logos/logo_2.png" height="60" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link mx-2 active" aria-current="page" href="{% url 'home' %}">Início</a>
+          </li>
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="{% url 'lista_produtos' %}">Lista de Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="{% url 'relatorio_entrada_saida' %}">Relatório de Entrada e Saída</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="{% url 'logout' %}">Logout</a>
+            </li>
+  
+            <!-- Ícone do sino à direita -->
+            <div class="d-flex align-items-center notification-icon">
+              <a class="nav-link" href="{% url 'produtos_proximos_validade' %}" title="Produtos próximos da validade">
+                  {% if produtos_proximos_validade %}
+                      <i class="mingcute--notification-newdot-fill"></i>
+                  {% else %}
+                      <i class="mingcute--notification-line"></i>
+                  {% endif %}
+              </a>
+            </div>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="{% url 'register' %}">Cadastrar</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  

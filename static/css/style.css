@@ -1,0 +1,226 @@
+/* Cores personalizadas */
+:root {
+    --dark-green: #042a2bff;
+    --cambridge-blue: #839788ff;
+    --thistle: #dec5e3ff;
+    --azul: #296eb4ff;
+    --tea-green: #f4f9f4; /* Tom suave, quase branco */
+}
+
+
+/* Define altura total do corpo e do container */
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--tea-green); /* Fundo claro, quase branco */
+    font-family: 'Arial', sans-serif;
+    color: var(--dark-green); /* Texto em verde escuro */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+/* Container principal flexível */
+.d-flex {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+
+/* Conteúdo principal flexível */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px; /* Limita a largura do container */
+    margin: 0 auto;
+    padding: 50px 20px; /* Ajuste o padding superior e inferior para um melhor espaçamento */
+    background-color: white; /* Fundo do container branco para contraste */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+/* Título principal */
+.titulo-principal {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--azul); /* Azul vibrante para foco no título */
+    margin-bottom: 20px;
+}
+
+/* Texto descritivo */
+.texto-descricao {
+    font-size: 1.2rem;
+    color: var(--cambridge-blue); /* Cambridge blue para suavidade */
+    margin-bottom: 40px;
+}
+
+/* Estilo do formulário */
+form {
+    margin-top: 20px;
+}
+
+/* Estilo dos campos do formulário */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaço abaixo do campo */
+    border: 1px solid var(--cambridge-blue); /* Borda suave */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 1rem;
+}
+
+/* Estilo do botão */
+.btn-custom {
+    background-color: transparent;
+    border: 2px solid var(--azul); /* Azul no contorno */
+    color: var(--azul); /* Texto em azul */
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Borda arredondada para suavidade */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito hover no botão */
+.btn-custom:hover {
+    background-color: var(--azul); /* Azul preenchido no hover */
+    color: #fff; /* Texto branco no hover */
+}
+
+/* Alertas */
+.alert {
+    margin-top: 20px; /* Espaço acima do alerta */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    .texto-descricao {
+        font-size: 1rem;
+    }
+    .btn-custom {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+    input[type="text"],
+    input[type="password"] {
+        font-size: 0.9rem; /* Ajuste de tamanho dos campos de entrada */
+    }
+}
+
+/* Estilos para a tabela de produtos */
+.table {
+    margin-top: 20px; /* Espaço acima da tabela */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde as bordas arredondadas */
+}
+
+/* Estilos para o cabeçalho da tabela */
+.table-dark {
+    background-color: var(--dark-green); /* Cor do cabeçalho */
+    color: white; /* Cor do texto no cabeçalho */
+}
+
+/* Estilo das linhas da tabela ao passar o mouse */
+.table tbody tr:hover {
+    background-color: var(--tea-green); /* Cor ao passar o mouse */
+}
+
+/* Estilo para as células da tabela */
+.table td, .table th {
+    vertical-align: middle; /* Alinhamento vertical */
+}
+
+/* Centraliza o texto na célula de aviso */
+.text-center {
+    text-align: center; /* Centraliza o texto */
+}
+
+.text-center1 {
+    text-align: right; /* Centraliza o texto */
+}
+
+.mingcute--notification-line {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='black' d='M5 9a7 7 0 0 1 14 0v3.764l1.822 3.644A1.1 1.1 0 0 1 19.838 18h-3.964a4.002 4.002 0 0 1-7.748 0H4.162a1.1 1.1 0 0 1-.984-1.592L5 12.764zm5.268 9a2 2 0 0 0 3.464 0zM12 4a5 5 0 0 0-5 5v3.764a2 2 0 0 1-.211.894L5.619 16h12.763l-1.17-2.342a2 2 0 0 1-.212-.894V9a5 5 0 0 0-5-5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+.mingcute--notification-newdot-fill {
+display: inline-block;
+width: 24px;
+height: 24px;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath d='m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%23ff0000' d='M12 2a7 7 0 0 1 2.263.374a4.5 4.5 0 0 0 4.5 7.447L19 9.743v2.784a1 1 0 0 0 .06.34l.046.107l1.716 3.433a1.1 1.1 0 0 1-.869 1.586l-.115.006H4.162a1.1 1.1 0 0 1-1.03-1.487l.046-.105l1.717-3.433a1 1 0 0 0 .098-.331L5 12.528V9a7 7 0 0 1 7-7m5.5 1a2.5 2.5 0 1 1 0 5a2.5 2.5 0 0 1 0-5M12 21a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 21'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.navbar .notification-icon {
+    margin-left: auto; /* Move o ícone para a extrema direita */
+    padding-left: 15px; /* Adiciona espaço à esquerda do ícone */
+}
+
+.d-flex .nav-link {
+    margin-left: auto; /* Garante que o ícone fique no canto direito */
+}
+
+.mingcute--notification-line,
+.mingcute--notification-newdot-fill {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo para navbar */
+.navbar {
+    background-color: var(--tea-green); /* Fundo claro da navbar */
+    color: var(--dark-green); /* Texto em verde escuro */
+}
+
+.navbar-brand, .nav-link {
+    color: var(--dark-green);
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: var(--azul);
+}
+
+/* Ícone de notificação */
+.notification-icon .mingcute--notification-line,
+.notification-icon .mingcute--notification-newdot-fill {
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+}
+
+.notification-icon {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* Responsividade para navbar */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+    .navbar-toggler {
+        margin-left: auto;
+    }
+}

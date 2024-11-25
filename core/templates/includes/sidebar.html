@@ -1,0 +1,89 @@
+<div class="custom-sidebar" id="sidebar">
+    <!-- Botão de Fechar -->
+    <button class="btn btn-primary close-sidebar-btn" onclick="toggleSidebar()">&#9776;</button>
+
+    <!-- Links da Sidebar -->
+    <div class="sidebar-links">
+        <!-- Opções Comuns -->
+        <div class="sidebar-section" style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 15px;">
+            <h5 class="text-center" style="color: #343a40;">Opções Gerais</h5>
+            {% if user.is_authenticated %}
+                <button class="btn btn-outline-secondary" onclick="window.location.href='{% url 'lista_produtos' %}'">Lista de Produtos</button>
+                <button class="btn btn-outline-secondary" onclick="window.location.href='{% url 'relatorio_entrada_saida' %}'">Relatório de Entrada e Saída</button>
+                <button class="btn btn-outline-secondary" onclick="window.location.href='{% url 'lista_pedidos' %}'">Lista de Pedidos</button>
+            {% endif %}
+        </div>
+
+        <!-- Opções de Administração -->
+        {% if user.is_superuser %}
+        <div class="sidebar-section" style="background-color: #d9edf7; padding: 15px; border-radius: 5px;">
+            <h5 class="text-center" style="color: #0056b3;">Opções do Administrador</h5>
+            <button class="btn btn-outline-primary" onclick="window.location.href='{% url 'admin_dashboard' %}'">Administração</button>
+            <button class="btn btn-outline-primary" onclick="window.location.href='{% url 'gerenciar_pedidos' %}'">Gerenciar Pedidos</button>
+            <button class="btn btn-outline-primary" onclick="window.location.href='{% url 'criar_escola' %}'">Criar Escola</button>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- CSS Atualizado -->
+<style>
+    .custom-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        border-right: 1px solid #ddd;
+        display: none;
+        z-index: 1100;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        padding-top: 10px;
+    }
+
+    .sidebar-links {
+        margin-top: 90%;
+        text-align: center;
+    }
+
+    .custom-sidebar .btn {
+        width: 90%;
+        margin: 10px auto;
+        display: block;
+        white-space: normal; /* Permite quebra de linha no texto */
+        word-wrap: break-word; /* Garante a quebra de palavras longas */
+        text-align: center; /* Centraliza o texto dentro do botão */
+        padding: 15px; /* Aumenta o espaçamento interno */
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+        line-height: 1.2; /* Ajusta a altura das linhas para texto longo */
+        height: auto; /* Garante que a altura do botão seja dinâmica */
+
+    }
+
+    .close-sidebar-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 1.5rem;
+        z-index: 1200;
+    }
+
+    .sidebar-section {
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-section h5 {
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+</style>
+
+<!-- Script -->
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const isVisible = sidebar.style.display === "block";
+        sidebar.style.display = isVisible ? "none" : "block";
+    }
+</script>

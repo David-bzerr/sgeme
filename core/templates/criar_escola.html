@@ -1,0 +1,28 @@
+{% extends 'modelo.html' %}
+
+{% block titulo %}
+    <title>Criar Nova Escola</title>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-4" style="background-color: beige">
+    <!-- Título Principal -->
+    <h2 class="titulo-principal text-center">Criar Nova Escola</h2>
+
+    <!-- Formulário de Criação -->
+    <form method="POST" action="{% url 'criar_escola' %}" class="border p-4 rounded shadow-sm mt-5" style="background-color: rgb(143, 143, 143);">
+        {% csrf_token %}
+
+        <!-- Nome da Escola -->
+        <div class="form-group mb-3">
+            <label for="nome" class="form-label">Nome da Escola:</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+
+        <!-- Botão de Envio -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Criar Escola</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

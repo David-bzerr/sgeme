@@ -1,0 +1,39 @@
+<div class="custom-sidebar" id="sidebar">
+    <!-- Botão de Fechar -->
+    <button class="btn btn-primary close-sidebar-btn" onclick="toggleSidebar()">&#9776;</button>
+
+    <!-- Links da Sidebar -->
+    <div class="sidebar-links">
+        {% if user.is_authenticated %}
+            <!-- Opções Comuns -->
+            <div class="sidebar-section common-options">
+                <h5 class="text-center">Opções Gerais</h5>
+                <div class="nav-button" onclick="window.location.href='{% url 'lista_produtos' %}'">
+                    <span>Lista de Produtos</span>
+                </div>
+                <div class="nav-button" onclick="window.location.href='{% url 'relatorio_entrada_saida' %}'">
+                    <span>Relatório de Entrada e Saída</span>
+                </div>
+                <div class="nav-button" onclick="window.location.href='{% url 'lista_pedidos' %}'">
+                    <span>Lista de Pedidos</span>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if user.is_superuser %}
+            <!-- Opções de Administração -->
+            <div class="sidebar-section admin-options">
+                <h5 class="text-center">Opções do Administrador</h5>
+                <div class="nav-button" onclick="window.location.href='{% url 'admin_dashboard' %}'">
+                    <span>Administração</span>
+                </div>
+                <div class="nav-button" onclick="window.location.href='{% url 'gerenciar_pedidos' %}'">
+                    <span>Gerenciar Pedidos</span>
+                </div>
+                <div class="nav-button" onclick="window.location.href='{% url 'criar_escola' %}'">
+                    <span>Criar Escola</span>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,105 @@
+
+        .custom-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #293241; /* Cor de fundo escura */
+            z-index: 1200; /* Sobrepõe a navbar */
+            display: none; /* Inicialmente oculta */
+            border-right: 1px solid #ddd;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        /* Garantir que a sidebar sobreponha a navbar */
+        .navbar {
+            z-index: 1030; /* Abaixo da sidebar */
+        }
+    
+        /* Botão de Fechar */
+        .close-sidebar-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5rem;
+            z-index: 1300;
+            background: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+    
+        /* Links da Sidebar */
+        .sidebar-links {
+            margin-top: 168px; /* Espaço para o botão fechar */
+            text-align: center;
+            
+        }
+    
+        /* Botões Animados */
+        .nav-button {
+            width: 90%;
+            margin: 10px auto;
+            padding: 12px 20px;
+            background: linear-gradient(90deg, #6c757d, #343a40);
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .nav-button:hover {
+            background: linear-gradient(90deg, #343a40, #6c757d);
+            transform: scale(1.05);
+        }
+    
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: skewX(-45deg);
+            transition: left 0.3s ease;
+        }
+    
+        .nav-button:hover::before {
+            left: 150%;
+        }
+    
+        /* Títulos das seções */
+        .sidebar-section h5 {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+    
+        /* Estilo para as seções */
+        .sidebar-section {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    
+        /* Opções Comuns */
+        .sidebar-section.common-options {
+            background-color: #333; /* Fundo escuro */
+        }
+    
+        /* Opções de Administração */
+        .sidebar-section.admin-options {
+            background-color: #444; /* Fundo mais escuro */
+        }
+    
+                                                                                        

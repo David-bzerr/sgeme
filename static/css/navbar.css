@@ -1,0 +1,42 @@
+/* Navbar geral */
+.navbar {
+    z-index: 1030; /* Sobrepõe a sidebar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    background-color: #293241 !important; /* Azul claro */
+}
+
+/* Logo */
+.logo-image {
+    width: 150px;
+    height: 50px;
+}
+
+/* Botões da navbar */
+.btn-outline-light {
+    color: #FFF3DE;
+    border-color: #FFF3DE;
+}
+
+.btn-outline-light:hover {
+    background-color: #FFF3DE;
+    color: #343a40; /* Texto preto ao hover */
+}
+
+/* Botão de notificação */
+.btn-warning {
+    font-weight: bold;
+    color: #343a40; /* Texto mais escuro */
+}
+
+/* Estilo da imagem de logout */
+.logout-image {
+    width: 30px;
+    height: 30px;
+    cursor: pointer; /* Indica ação ao passar o mouse */
+}
+
+/* Espaçamento geral */
+.ms-auto {
+    margin-left: auto;
+}
+/* Botões Animados */

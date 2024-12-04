@@ -1,0 +1,175 @@
+{% extends 'modelo.html' %}
+
+{% block titulo %}
+<title>Registro - Sistema de Merenda Escolar</title>
+{% endblock %}
+
+{% block conteudo %}
+<div class="container mt-5" style="background-color: rgb(166, 203, 247)">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="custom-card">
+                <form method="post" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    
+                    <!-- Campo Usuário -->
+                    <div class="form-group mb-3">
+                        <label for="username" class="form-label">Usuário</label>
+                        {{ form.username }} <!-- Renderiza o campo de usuário -->
+                        {% if form.username.errors %}
+                            <div class="alert alert-danger mt-2">
+                                {{ form.username.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Campo Email -->
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        {{ form.email }} <!-- Renderiza o campo de email -->
+                        {% if form.email.errors %}
+                            <div class="alert alert-danger mt-2">
+                                {{ form.email.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Campo Nome -->
+                    <div class="form-group mb-3">
+                        <label for="first_name" class="form-label">Nome</label>
+                        {{ form.first_name }} <!-- Renderiza o campo de nome -->
+                        {% if form.first_name.errors %}
+                            <div class="alert alert-danger mt-2">
+                                {{ form.first_name.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Campo Senha -->
+                    <div class="form-group mb-3">
+                        <label for="password1" class="form-label">Senha</label>
+                        {{ form.password1 }} <!-- Renderiza o campo de senha -->
+                        {% if form.password1.errors %}
+                            <div class="alert alert-danger mt-2">
+                                {{ form.password1.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Campo Confirmar Senha -->
+                    <div class="form-group mb-3">
+                        <label for="password2" class="form-label">Confirme a Senha</label>
+                        {{ form.password2 }} <!-- Renderiza o campo de confirmação de senha -->
+                        {% if form.password2.errors %}
+                            <div class="alert alert-danger mt-2">
+                                {{ form.password2.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Campo de seleção de escola -->
+                    <div class="form-group mb-3">
+                        <label for="escola" class="form-label">Escolha uma Escola</label>
+                        {{ form.escola }} <!-- Renderiza o campo de escola -->
+                        {% if form.escola.errors %}
+                            <div class="alert alert-danger mt-2">
+                                {{ form.escola.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" class="btn btn-custom">Cadastrar</button>
+
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger mt-3">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                </form>
+                <div class="text-center mt-3">
+                    <small>Já tem uma conta? <a href="{% url 'login' %}">Login</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+/* Estilo para o formulário */
+.custom-card {
+    background-color: #FFF3DE;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Reduz a sombra */
+    border: none;
+    border-radius: 40px; /* Reduz o arredondamento */
+    padding: 1rem; /* Reduz o padding interno */
+    margin-top: -0.5rem; /* Ajusta margens */
+    margin-bottom: -0.5rem; 
+    max-width: 400px; /* Limita a largura do card */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+/* Estilo dos inputs e labels */
+.form-label {
+    font-weight: bold;
+    color: #6F7666;
+    text-align: center;
+    display: block;
+    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+}
+
+.form-control {
+    background-color: #f9f4e9;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Ajusta o arredondamento */
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1); /* Reduz o efeito de sombra */
+    font-size: 0.9rem; /* Reduz o tamanho da fonte dos inputs */
+    padding: 0.4rem 0.8rem; /* Ajusta o padding interno */
+    transition: border-color 0.3s ease;
+}
+.form-control:focus {
+    border-color: #6F7666;
+    box-shadow: 0 0 3px rgba(111, 118, 102, 0.3); /* Reduz a sombra de foco */
+}
+
+/* Botão de submit */
+.btn-custom {
+    background-color: #B1313F;
+    color: #FFF;
+    border-radius: 4px; /* Ajusta o arredondamento */
+    padding: 0.4rem 1rem; /* Ajusta o tamanho do botão */
+    font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    font-weight: bold;
+}
+.btn-custom:hover {
+    background-color: #86242e;
+}
+
+/* Centraliza os campos do formulário */
+.form-group {
+    text-align: center;
+}
+
+/* Estilo do selo de imagem */
+.seal-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px; /* Ajusta a distância entre o selo e o formulário */
+}
+
+.seal-image {
+    position: absolute;
+    top: -40px; /* Ajusta a posição para ficar acima do formulário */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Reduz o tamanho do selo */
+    height: 80px;
+    border-radius: 50%; 
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    z-index: 10;
+    margin-top: 5rem; /* Ajusta o deslocamento vertical */
+}
+
+
+</style>
+{% endblock %}

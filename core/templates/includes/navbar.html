@@ -1,0 +1,45 @@
+{% load static %} 
+<nav class="navbar navbar-expand-lg navbar-dark " style="margin-top: 10px;">
+    <div class="container" style="background-color: #444">
+        <!-- Logo com imagem -->
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+            <img src="{% static 'imagens/esse.png' %}" alt="Logo" class="logo-image me-2">
+        </a>
+
+        <!-- Botão Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links da Navbar -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                {% if not user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light me-2" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light me-2" href="{% url 'register' %}">Cadastrar</a>
+                    </li>
+                {% endif %}
+            </ul>
+            {% if user.is_authenticated %}
+            <div class="d-flex ms-auto align-items-center">
+                <!-- Imagem de logout -->
+                <a class="nav-button" href="{% url 'logout' %}">
+                    Logout
+                </a>
+                <!-- Botão de notificação -->
+                <a class="btn btn-warning" href="{% url 'produtos_proximos_validade' %}" title="Produtos próximos da validade">
+                    {% if produtos_proximos_validade %}
+                        <i class="mingcute--notification-newdot-fill"></i>
+                    {% else %}
+                        <i class="mingcute--notification-line"></i>
+                    {% endif %}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+

@@ -5,12 +5,10 @@
         <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
             <img src="{% static 'imagens/esse.png' %}" alt="Logo" class="logo-image me-2">
         </a>
-
         <!-- Botão Navbar Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <!-- Links da Navbar -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
@@ -25,7 +23,6 @@
             </ul>
             {% if user.is_authenticated %}
             <div class="d-flex ms-auto align-items-center">
-                <!-- Imagem de logout -->
                 <a class="nav-button" href="{% url 'logout' %}">
                     Logout
                 </a>

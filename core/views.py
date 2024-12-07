@@ -421,5 +421,3 @@ def excluir_usuario(request, user_id):
     # Redireciona caso o método não seja POST
     messages.error(request, 'A exclusão deve ser realizada com um pedido POST.')
     return redirect('admin_dashboard')
-
-
